@@ -1,0 +1,80 @@
+<section class="news-carrusel">
+  <app-title
+    [visible]="true"
+    title="Noticias"
+    resetLinkRoute="/news"
+  ></app-title>
+
+  <div class="contenedorCarrusel">
+    <swiper
+    [slidesPerView]="4"
+    [spaceBetween]="-10"
+    [navigation]="true"
+    [loop]="true"
+    [breakpoints]="{
+      '300': {
+        slidesPerView: 1,
+        spaceBetween: 0
+      },
+      '540': {
+        slidesPerView: 1,
+        spaceBetween: 20
+      },
+      '640': {
+        slidesPerView: 1,
+        spaceBetween: 20
+      },
+      '768': {
+        slidesPerView: 2,
+        spaceBetween: 0
+      },
+      '1280': {
+        slidesPerView: 3,
+        spaceBetween: 10
+      },
+      '1680': {
+        slidesPerView: 4,
+        spaceBetween: 20
+      },
+      '1920': {
+        slidesPerView: 5,
+        spaceBetween: 20
+      },
+      '2560': {
+        slidesPerView: 6,
+        spaceBetween: 0
+      },
+      '3400': {
+        slidesPerView: 8,
+        spaceBetween: 0
+      }
+    }"
+    class="mySwiper"
+    >
+    <ng-template swiperSlide *ngFor="let noticia of news">
+      <div class="contenedor-news">
+        <a routerLink="/news/notice/{{ noticia.id }}">
+          <div class="">
+            <img
+              [src]="noticia.imageUrl"
+              [alt]="noticia.name"
+              class="card-img-top"
+            >
+
+            <div class="contenedor">
+              <div class="date container">
+                <p><strong>{{ noticia.date }}</strong></p>
+              </div>
+              <div class="name">
+                <strong>{{ noticia.name }}</strong>
+              </div>
+            </div>
+
+          </div>
+        </a>
+      </div>
+    </ng-template>
+    </swiper>
+  </div>
+
+</section>
