@@ -1,0 +1,50 @@
+<main class="gallery">
+    <div class="div-title">
+        <h2 class="title"><strong>Galería</strong></h2>
+    </div>
+
+    <ng-template #content let-c="close" let-d="dismiss">
+      <div class="modal-header">
+        <h4 class="modal-title">Modal title</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+      </div>
+    </ng-template>
+    
+    <!-- <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Open me!</button> -->
+    <div class="gallerySection">
+      <div *ngFor="let i of sources" class="card-gallery">
+          <img [src]="i.imageUrl" class="image-gallery" (click)="open(content)"> -->
+          <!-- <p><span>{{i.title}}</span></p> -->
+      </div>
+    </div>
+    
+    <!-- <section class="contenedorSwiper">
+        <swiper
+          [navigation]="true"
+          [loop]="true"
+          [spaceBetween]="10"
+          class="mySwiper"
+        >
+          <ng-template swiperSlide *ngFor="let i of sources">
+            <div class="contenedorImagen">
+              <img [src]="i.imageUrl" alt="Delorean-Banner">
+            </div>
+          </ng-template>
+        </swiper>
+    </section> -->
+    <!-- <div class="gallerySection">
+        <div *ngFor="let i of sources" class="card-gallery">
+            <img [src]="i.imageUrl" class="image-gallery" (click)="open(content)"> -->
+            <!-- <p><span>{{i.title}}</span></p> -->
+        <!-- </div>
+    </div> -->
+
+</main>
